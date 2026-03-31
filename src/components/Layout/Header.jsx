@@ -1,16 +1,27 @@
-import { Bell } from 'lucide-react';
+import { Moon, Sun } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import { formatCurrency } from '../../utils/formatters';
 import { useWallet } from '../../context/WalletContext';
+import { useTheme } from '../../context/ThemeContext';
 
 export default function Header({ title }) {
   const { user } = useAuth();
   const { balance } = useWallet();
+  const { isLightMode, toggleTheme } = useTheme();
 
   return (
     <header className="header">
       <span className="header-title">{title || 'StockX'}</span>
       <div className="header-right">
+        <button
+          type="button"
+          className="btn btn-ghost btn-icon theme-toggle"
+          onClick={toggleTheme}
+          aria-label={`Switch to ${isLightMode ? 'dark' : 'light'} mode`}
+          title={`Switch to ${isLightMode ? 'dark' : 'light'} mode`}
+        >
+          {isLightMode ? <Moon size={16} /> : <Sun size={16} />}
+        </button>
         {balance !== null && (
           <span style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>
             Balance:{' '}
