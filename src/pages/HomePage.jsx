@@ -22,7 +22,9 @@ export default function HomePage() {
           border: '1px solid var(--brand-border)',
         }}>
           <h1 style={{ fontSize: '1.75rem', marginBottom: 8 }}>
-            Welcome back, {user?.name?.split(' ')[0]} 👋
+            {user?.createdAt && (Date.now() - new Date(user.createdAt).getTime()) < 86400000
+              ? 'Welcome'
+              : 'Welcome back'}, {user?.name?.split(' ')[0]} 👋
           </h1>
           <p style={{ color: 'var(--text-muted)', marginBottom: 24 }}>
             Here&apos;s a snapshot of today&apos;s top performing stocks.

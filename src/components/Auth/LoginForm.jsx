@@ -54,7 +54,7 @@ export default function LoginForm() {
           <div className="auth-logo-icon">SX</div>
           <span className="auth-logo-name">StockX</span>
         </div>
-        <h1 className="auth-title">Welcome back</h1>
+        <h1 className="auth-title">Welcome</h1>
         <p className="auth-subtitle">Sign in to your trading account</p>
 
         {apiError && <ErrorAlert message={apiError} />}
