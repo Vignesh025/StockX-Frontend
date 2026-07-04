@@ -49,8 +49,8 @@ export default function HomePage() {
         <div>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 'var(--sp-5)' }}>
             <div>
-              <h2 style={{ margin: 0 }}>Top Stocks</h2>
-              <p style={{ margin: '4px 0 0', fontSize: '0.875rem' }}>Top 15 most valued stocks — click to view details</p>
+              <h2 style={{ margin: 0 }}>Trending Today</h2>
+              <p style={{ margin: '4px 0 0', fontSize: '0.875rem' }}>Top 15 most traded stocks — click to view details</p>
             </div>
             <Link to={ROUTES.MARKET} className="btn btn-ghost btn-sm">
               View all →
