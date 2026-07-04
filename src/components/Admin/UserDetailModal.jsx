@@ -38,14 +38,14 @@ export default function UserDetailModal({ user, onClose }) {
             {/* Basic info */}
             <div style={{ padding: '16px', background: 'var(--bg-surface)', borderRadius: 'var(--r-md)', border: '1px solid var(--border)', display: 'flex', gap: 16, alignItems: 'center' }}>
               <div style={{ width: 52, height: 52, borderRadius: 'var(--r-full)', background: 'var(--brand)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontWeight: 800, fontSize: '1.1rem', flexShrink: 0 }}>
-                {detail.user?.name?.charAt(0)?.toUpperCase() ?? '?'}
+                {detail.name?.charAt(0)?.toUpperCase() ?? '?'}
               </div>
               <div>
-                <div style={{ fontWeight: 700, fontSize: '1rem' }}>{detail.user?.name}</div>
-                <div style={{ color: 'var(--text-muted)', fontSize: '0.875rem' }}>{detail.user?.email}</div>
+                <div style={{ fontWeight: 700, fontSize: '1rem' }}>{detail.name}</div>
+                <div style={{ color: 'var(--text-muted)', fontSize: '0.875rem' }}>{detail.email}</div>
                 <div style={{ display: 'flex', gap: 8, marginTop: 6 }}>
-                  <span className={`badge ${detail.user?.role === 'Admin' ? 'badge-brand' : 'badge-muted'}`}>{detail.user?.role}</span>
-                  <span className={`badge ${detail.user?.isActive ? 'badge-green' : 'badge-red'}`}>{detail.user?.isActive ? 'Active' : 'Inactive'}</span>
+                  <span className={`badge ${detail.role === 'Admin' ? 'badge-brand' : 'badge-muted'}`}>{detail.role}</span>
+                  <span className={`badge ${detail.isActive ? 'badge-green' : 'badge-red'}`}>{detail.isActive ? 'Active' : 'Inactive'}</span>
                 </div>
               </div>
             </div>
@@ -104,7 +104,7 @@ export default function UserDetailModal({ user, onClose }) {
             )}
 
             <div style={{ textAlign: 'right', fontSize: '0.75rem', color: 'var(--text-subtle)' }}>
-              Joined: {formatDate(detail.user?.createdAt)}
+              Joined: {formatDate(detail.createdAt)}
             </div>
           </div>
         )}
