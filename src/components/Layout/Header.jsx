@@ -31,7 +31,7 @@ export default function Header({ title }) {
         <div style={{
           width: 32, height: 32, borderRadius: 'var(--r-full)', background: 'var(--brand)',
           display: 'flex', alignItems: 'center', justifyContent: 'center',
-          color: '#fff', fontWeight: 700, fontSize: '0.8125rem',
+          color: 'var(--text-inverse)', fontWeight: 700, fontSize: '0.8125rem',
         }}>
           {user?.name?.charAt(0)?.toUpperCase() ?? '?'}
         </div>
