@@ -794,7 +794,7 @@ tbody tr:hover {
 .sidebar-brand-icon {
   width: 36px;
   height: 36px;
-  background: var(--brand);
+  background: #ffffff;
   border-radius: var(--r-md);
   display: flex;
   align-items: center;
@@ -997,32 +997,4 @@ tbody tr:hover {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--border);
-}
-
-/* ── Responsive ────────────────────────────────────────────── */
-@media (max-width: 768px) {
-  .sidebar {
-    transform: translateX(-100%);
-    transition: transform var(--dur) var(--ease);
-  }
-
-  .sidebar.open {
-    transform: none;
-  }
-
-  .main-content {
-    margin-left: 0;
-  }
-
-  .header {
-    left: 0;
-  }
-
-  .page-container {
-    padding: var(--sp-5);
-  }
-
-  .stat-grid {
-    grid-template-columns: 1fr 1fr;
-  }
 }
