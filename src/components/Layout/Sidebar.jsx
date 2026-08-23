@@ -31,7 +31,7 @@ export default function Sidebar() {
   return (
     <aside className="sidebar">
       <Link to={ROUTES.HOME} className="sidebar-brand">
-        <div className="sidebar-brand-icon">SX</div>
+        <img src="/stockx.svg" alt="StockX" className="sidebar-brand-icon" />
         <span className="sidebar-brand-name">StockX</span>
       </Link>
 
