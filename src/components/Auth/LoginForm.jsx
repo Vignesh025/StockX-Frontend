@@ -51,7 +51,9 @@ export default function LoginForm() {
     <div className="auth-page">
       <div className="auth-card">
         <div className="auth-logo">
-          <div className="auth-logo-icon">SX</div>
+          <div className="auth-logo-icon" style={{ background: '#ffffff' }}>
+              <img src="/stockx.svg" alt="StockX" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+            </div>
           <span className="auth-logo-name">StockX</span>
         </div>
         <h1 className="auth-title">Welcome back</h1>
