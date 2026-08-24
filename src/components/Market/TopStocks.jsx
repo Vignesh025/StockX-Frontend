@@ -20,7 +20,7 @@ export default function TopStocks({ onSelectStock }) {
     <div>
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))',
+        gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 220px), 1fr))',
         gap: 'var(--sp-4)',
       }}>
         {stocks.map((stock) => {

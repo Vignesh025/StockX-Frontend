@@ -24,23 +24,23 @@ export default function PortfolioTable({ holdings, onSell }) {
             const cls = profitLossClass(h.profitLoss);
             return (
               <tr key={h.symbol}>
-                <td>
+                <td data-label="Symbol">
                   <div style={{ fontWeight: 700 }}>{h.symbol}</div>
                   <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{h.name}</div>
                 </td>
-                <td>{h.quantity}</td>
-                <td>{formatCurrency(h.avgCostBasis)}</td>
-                <td>{formatCurrency(h.currentPrice)}</td>
-                <td style={{ fontWeight: 600 }}>{formatCurrency(h.currentValue)}</td>
-                <td className={`text-${cls}`} style={{ fontWeight: 600 }}>
+                <td data-label="Shares">{h.quantity}</td>
+                <td data-label="Avg Cost">{formatCurrency(h.avgCostBasis)}</td>
+                <td data-label="Cur. Price">{formatCurrency(h.currentPrice)}</td>
+                <td data-label="Market Value" style={{ fontWeight: 600 }}>{formatCurrency(h.currentValue)}</td>
+                <td data-label="P/L" className={`text-${cls}`} style={{ fontWeight: 600 }}>
                   <span style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
                     {cls === 'positive' ? <TrendingUp size={13} /> : cls === 'negative' ? <TrendingDown size={13} /> : <Minus size={13} />}
                     {formatCurrency(Math.abs(h.profitLoss))}
                     {h.profitLoss < 0 && ' loss'}
                   </span>
                 </td>
-                <td className={`text-${cls}`}>{formatPercent(h.profitLossPercent ?? 0)}</td>
-                <td>
+                <td data-label="P/L %" className={`text-${cls}`}>{formatPercent(h.profitLossPercent ?? 0)}</td>
+                <td data-label="">
                   <button
                     id={`table-sell-btn-${h.symbol}`}
                     className="btn btn-danger btn-sm"

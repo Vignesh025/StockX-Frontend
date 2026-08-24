@@ -1,4 +1,4 @@
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useLocation } from 'react-router-dom';
 import { LayoutDashboard, TrendingUp, Briefcase, Wallet, Users, LogOut, ChevronRight } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import { useWallet } from '../../context/WalletContext';
@@ -17,19 +17,26 @@ const adminItems = [
   { to: ROUTES.ADMIN, icon: Users, label: 'Admin' },
 ];
 
-export default function Sidebar() {
+export default function Sidebar({ isOpen, onClose }) {
   const { user, logout, isAdmin } = useAuth();
   const { balance, fetchBalance } = useWallet();
+  const location = useLocation();
 
   useEffect(() => {
     if (user) fetchBalance();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
+  // Close sidebar on route change (mobile)
+  useEffect(() => {
+    if (isOpen) onClose?.();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location.pathname]);
+
   const initial = user?.name?.charAt(0)?.toUpperCase() ?? '?';
 
   return (
-    <aside className="sidebar">
+    <aside className={`sidebar${isOpen ? ' open' : ''}`}>
       <Link to={ROUTES.HOME} className="sidebar-brand">
         <img src="/stockx.svg" alt="StockX" className="sidebar-brand-icon" />
         <span className="sidebar-brand-name">StockX</span>

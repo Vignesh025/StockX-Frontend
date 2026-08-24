@@ -92,25 +92,25 @@ export default function UserManagementTable({ onViewDetail }) {
                   </tr>
                 ) : users.map((u) => (
                   <tr key={u.userId ?? u.id}>
-                    <td>
+                    <td data-label="User">
                       <div style={{ fontWeight: 600 }}>{u.name}</div>
                       <div style={{ fontSize: '0.8125rem', color: 'var(--text-muted)' }}>{u.email}</div>
                     </td>
-                    <td>
+                    <td data-label="Role">
                       <span className={`badge ${u.role === 'Admin' ? 'badge-brand' : 'badge-muted'}`}>
                         {u.role}
                       </span>
                     </td>
-                    <td>
+                    <td data-label="Status">
                       <span className={`badge ${u.isActive ? 'badge-green' : 'badge-red'}`}>
                         {u.isActive ? 'Active' : 'Inactive'}
                       </span>
                     </td>
-                    <td style={{ fontSize: '0.8125rem', color: 'var(--text-muted)' }}>
+                    <td data-label="Joined" style={{ fontSize: '0.8125rem', color: 'var(--text-muted)' }}>
                       {formatDate(u.createdAt)}
                     </td>
-                    <td>
-                      <div style={{ display: 'flex', gap: 8 }}>
+                    <td data-label="">
+                      <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
                         <button
                           id={`admin-view-user-${u.userId ?? u.id}`}
                           className="btn btn-secondary btn-sm"
@@ -142,7 +142,7 @@ export default function UserManagementTable({ onViewDetail }) {
 
           {/* Pagination */}
           {totalPages > 1 && (
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 'var(--sp-5)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 'var(--sp-5)', flexWrap: 'wrap', gap: 'var(--sp-3)' }}>
               <span style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>
                 Page {page} of {totalPages} · {total} users
               </span>

@@ -86,7 +86,7 @@ export default function PortfolioPage() {
             ) : viewMode === 'table' ? (
               <PortfolioTable holdings={holdings} onSell={setSellHolding} />
             ) : (
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 'var(--sp-5)' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 'var(--sp-5)' }}>
                 {holdings.map((h) => (
                   <HoldingCard key={h.symbol} holding={h} onSell={setSellHolding} />
                 ))}

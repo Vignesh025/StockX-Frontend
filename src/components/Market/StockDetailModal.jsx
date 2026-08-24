@@ -72,10 +72,10 @@ export default function StockDetailModal({ stockBase, onClose }) {
         {!loading && !error && detail && !showBuy && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--sp-5)' }}>
             {/* Price section */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', padding: '20px', background: 'var(--bg-surface)', borderRadius: 'var(--r-lg)', border: '1px solid var(--border)' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', padding: 'clamp(14px, 3vw, 20px)', background: 'var(--bg-surface)', borderRadius: 'var(--r-lg)', border: '1px solid var(--border)', flexWrap: 'wrap', gap: 'var(--sp-3)' }}>
               <div>
                 <div style={{ color: 'var(--text-subtle)', fontSize: '0.75rem', marginBottom: 4 }}>CURRENT PRICE</div>
-                <div style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--text)' }}>
+                <div style={{ fontSize: 'clamp(1.5rem, 5vw, 2rem)', fontWeight: 800, color: 'var(--text)' }}>
                   {formatCurrency(detail.currentPrice)}
                 </div>
                 {change !== 0 && (
@@ -94,7 +94,7 @@ export default function StockDetailModal({ stockBase, onClose }) {
             </div>
 
             {/* Meta */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: 12 }}>
               {detail.exchange && (
                 <div style={{ padding: '12px 16px', background: 'var(--bg-surface)', borderRadius: 'var(--r-md)', border: '1px solid var(--border)' }}>
                   <div style={{ fontSize: '0.7rem', color: 'var(--text-subtle)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Exchange</div>

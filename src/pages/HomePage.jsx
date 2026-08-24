@@ -17,14 +17,14 @@ export default function HomePage() {
       <div className="page-container">
         {/* Welcome banner */}
         <div style={{
-          padding: '32px', borderRadius: 'var(--r-xl)', marginBottom: 'var(--sp-8)',
+          padding: 'clamp(20px, 4vw, 32px)', borderRadius: 'var(--r-xl)', marginBottom: 'var(--sp-8)',
           background: 'linear-gradient(135deg, rgba(99,102,241,0.2) 0%, rgba(16,185,129,0.1) 100%)',
           border: '1px solid var(--brand-border)',
         }}>
-          <h1 style={{ fontSize: '1.75rem', marginBottom: 8 }}>
+          <h1 style={{ fontSize: 'clamp(1.25rem, 3.5vw, 1.75rem)', marginBottom: 8 }}>
             Welcome back, {user?.name?.split(' ')[0]} 👋
           </h1>
-          <p style={{ color: 'var(--text-muted)', marginBottom: 24 }}>
+          <p style={{ color: 'var(--text-muted)', marginBottom: 24, fontSize: 'clamp(0.8125rem, 2vw, 1rem)' }}>
             Here&apos;s a snapshot of today&apos;s top performing stocks.
           </p>
           <div style={{ display: 'flex', gap: 'var(--sp-3)', flexWrap: 'wrap' }}>
@@ -47,7 +47,7 @@ export default function HomePage() {
 
         {/* Top stocks */}
         <div>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 'var(--sp-5)' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 'var(--sp-5)', flexWrap: 'wrap', gap: 'var(--sp-3)' }}>
             <div>
               <h2 style={{ margin: 0 }}>Trending Today</h2>
               <p style={{ margin: '4px 0 0', fontSize: '0.875rem' }}>Top 15 most traded stocks — click to view details</p>

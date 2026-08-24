@@ -1,3 +1,4 @@
+import { useState, useCallback } from 'react';
 import Sidebar from './Sidebar';
 import Header from './Header';
 import Footer from './Footer';
@@ -16,12 +17,23 @@ function ToastIcon({ type }) {
 
 export default function MainLayout({ children, title }) {
   const { notifications, dismiss } = useNotification();
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  const toggleSidebar = useCallback(() => setSidebarOpen((v) => !v), []);
+  const closeSidebar = useCallback(() => setSidebarOpen(false), []);
 
   return (
     <div className="app-layout">
-      <Sidebar />
+      {/* Mobile sidebar backdrop */}
+      <div
+        className={`sidebar-backdrop${sidebarOpen ? ' visible' : ''}`}
+        onClick={closeSidebar}
+        aria-hidden="true"
+      />
+
+      <Sidebar isOpen={sidebarOpen} onClose={closeSidebar} />
       <div className="main-content">
-        <Header title={title} />
+        <Header title={title} onToggleSidebar={toggleSidebar} />
         <main>{children}</main>
         <Footer />
       </div>

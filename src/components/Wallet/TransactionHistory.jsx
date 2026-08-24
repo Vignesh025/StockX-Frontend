@@ -81,34 +81,34 @@ export default function TransactionHistory({ limit = 50 }) {
             <tbody>
               {transactions.map((tx) => (
                 <tr key={tx.transactionId ?? tx.id}>
-                  <td>
+                  <td data-label="Type">
                     <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                       <TxIcon type={tx.type} />
                       <TxBadge type={tx.type} />
                     </div>
                   </td>
-                  <td style={{ fontSize: '0.8125rem', color: 'var(--text-muted)' }}>
+                  <td data-label="Date" style={{ fontSize: '0.8125rem', color: 'var(--text-muted)' }}>
                     {formatDate(tx.timestamp)}
                   </td>
-                  <td>
+                  <td data-label="Stock">
                     {tx.stockSymbol ? (
                       <span style={{ fontWeight: 600, fontFamily: 'monospace' }}>{tx.stockSymbol}</span>
                     ) : (
                       <span style={{ color: 'var(--text-subtle)' }}>—</span>
                     )}
                   </td>
-                  <td>
+                  <td data-label="Qty">
                     {tx.quantity ?? <span style={{ color: 'var(--text-subtle)' }}>—</span>}
                   </td>
-                  <td>
+                  <td data-label="Price/Share">
                     {tx.pricePerShare != null ? formatCurrency(tx.pricePerShare) : <span style={{ color: 'var(--text-subtle)' }}>—</span>}
                   </td>
-                  <td style={{ fontWeight: 700 }}>
+                  <td data-label="Amount" style={{ fontWeight: 700 }}>
                     <span className={tx.amount > 0 ? 'text-positive' : 'text-negative'}>
                       {tx.amount > 0 ? '+' : ''}{formatCurrency(tx.amount)}
                     </span>
                   </td>
-                  <td>
+                  <td data-label="Status">
                     <span className={`badge ${tx.status === 'Completed' ? 'badge-green' : tx.status === 'Failed' ? 'badge-red' : 'badge-amber'}`}>
                       {tx.status}
                     </span>

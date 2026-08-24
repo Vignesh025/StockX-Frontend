@@ -1,17 +1,27 @@
-import { Moon, Sun } from 'lucide-react';
+import { Moon, Sun, Menu } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import { formatCurrency } from '../../utils/formatters';
 import { useWallet } from '../../context/WalletContext';
 import { useTheme } from '../../context/ThemeContext';
 
-export default function Header({ title }) {
+export default function Header({ title, onToggleSidebar }) {
   const { user } = useAuth();
   const { balance } = useWallet();
   const { isLightMode, toggleTheme } = useTheme();
 
   return (
     <header className="header">
-      <span className="header-title">{title || 'StockX'}</span>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--sp-3)' }}>
+        <button
+          type="button"
+          className="mobile-menu-btn"
+          onClick={onToggleSidebar}
+          aria-label="Toggle navigation menu"
+        >
+          <Menu size={20} />
+        </button>
+        <span className="header-title">{title || 'StockX'}</span>
+      </div>
       <div className="header-right">
         <button
           type="button"
@@ -23,7 +33,7 @@ export default function Header({ title }) {
           {isLightMode ? <Moon size={16} /> : <Sun size={16} />}
         </button>
         {balance !== null && (
-          <span style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>
+          <span className="header-balance-text" style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>
             Balance:{' '}
             <strong style={{ color: 'var(--green)' }}>{formatCurrency(balance)}</strong>
           </span>

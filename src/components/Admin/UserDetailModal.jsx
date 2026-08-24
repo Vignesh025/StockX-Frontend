@@ -68,7 +68,7 @@ export default function UserDetailModal({ user, onClose }) {
                   <Briefcase size={14} />
                   Portfolio Summary
                 </div>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12 }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))', gap: 12 }}>
                   {[
                     { label: 'Total Value', value: formatCurrency(detail.portfolioSummary.totalValue) },
                     { label: 'Total Cost', value: formatCurrency(detail.portfolioSummary.totalCost) },

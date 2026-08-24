@@ -22,7 +22,7 @@ export default function MarketPage() {
           </div>
         </div>
 
-        <div className="card" style={{ maxWidth: 720 }}>
+        <div className="card" style={{ maxWidth: 'min(720px, 100%)' }}>
           <h3 style={{ marginBottom: 'var(--sp-4)' }}>Search Stocks</h3>
           <p style={{ fontSize: '0.875rem', marginBottom: 'var(--sp-5)' }}>
             Type a stock symbol (e.g. AAPL) or company name to find stocks. Click any result to view price and buy.
