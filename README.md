@@ -1,10 +1,4 @@
 <p align="center">
-  <a href="https://github.com/Vignesh025/StockX-Backend" target="_blank" rel="noopener noreferrer">
-    <strong>🔗 Backend Repository: StockX Backend</strong>
-  </a>
-</p>
-
-<p align="center">
   <h1 align="center">📈 StockX Frontend</h1>
   <p align="center">
     A modern, responsive single-page application for a stock-trading simulation platform.<br/>
@@ -99,10 +93,10 @@
 The frontend follows a **feature-based** organization with clear separation between pages, components, services, context, hooks, and utilities.
 
 ```
-┌─────────────────────────────────────────────────────────────────��[...]
+┌─────────────────────────────────────────────────────────────────┐
 │                          Pages                                  │
 │    HomePage · MarketPage · PortfolioPage · WalletPage · Admin   │
-├─────────────────────────────────────────────────────────────────��[...]
+├─────────────────────────────────────────────────────────────────┤
 │                       Components                                │
 │  Layout (Sidebar, Header, Footer, MainLayout)                   │
 │  Market (StockSearch, TopStocks, StockCard, StockDetailModal,   │
@@ -114,21 +108,21 @@ The frontend follows a **feature-based** organization with clear separation betw
 │  Admin (AdminDashboard, UserManagementTable, UserDetailModal)   │
 │  Common (LoadingSpinner, ErrorAlert, SuccessAlert,              │
 │          ConfirmDialog)                                         │
-├─────────────────────────────────────────────────────────────────��[...]
+├─────────────────────────────────────────────────────────────────┤
 │                    Context (State)                               │
 │   AuthContext · WalletContext · ThemeContext ·                   │
 │   NotificationContext                                           │
-├─────────────────────────────────────────────────────────────────��[...]
+├─────────────────────────────────────────────────────────────────┤
 │                   Custom Hooks                                  │
 │   useAuth · useWallet · useQuery · usePagination                │
-├─────────────────────────────────────────────────────────────────��[...]
+├─────────────────────────────────────────────────────────────────┤
 │                   API Services                                  │
 │   api.js (Axios instance) · authService · stockService          │
 │   tradingService · walletService · adminService                 │
-├─────────────────────────────────────────────────────────────────��[...]
+├─────────────────────────────────────────────────────────────────┤
 │                    Utilities                                    │
 │   constants · formatters · validators · localStorage            │
-└─────────────────────────────────────────────────────────────────��[...]
+└─────────────────────────────────────────────────────────────────┘
 ```
 
 **Data Flow:**
@@ -446,7 +440,7 @@ A central Axios instance handles:
 | **stockService** | `searchStocks()`, `getTopStocks()`, `getStockDetails()` | `GET /stock/search`, `GET /stock/top`, `GET /stock/{symbol}` |
 | **tradingService** | `buyStock()`, `sellStock()`, `getPortfolio()` | `POST /trading/buy`, `POST /trading/sell`, `GET /portfolio` |
 | **walletService** | `getBalance()`, `initiateDeposit()`, `getTransactions()` | `GET /wallet/balance`, `POST /wallet/deposit/initiate`, `GET /transactions` |
-| **adminService** | `getAdminUsers()`, `getAdminUserDetail()`, `updateUserActivation()`, `updateUserRole()` | `GET /admin/users`, `GET /admin/users/:id`, `PUT /admin/users/:id/activate`, `PUT /admin/[...]` |
+| **adminService** | `getAdminUsers()`, `getAdminUserDetail()`, `updateUserActivation()`, `updateUserRole()` | `GET /admin/users`, `GET /admin/users/:id`, `PUT /admin/users/:id/activate`, `PUT /admin/users/:id/role` |
 
 ### Dev Proxy
 
