@@ -1,4 +1,10 @@
 <p align="center">
+  <a href="https://github.com/Vignesh025/StockX-Backend" target="_blank" rel="noopener noreferrer">
+    <strong>🔗 Backend Repository: StockX Backend</strong>
+  </a>
+</p>
+
+<p align="center">
   <h1 align="center">📈 StockX Frontend</h1>
   <p align="center">
     A modern, responsive single-page application for a stock-trading simulation platform.<br/>
